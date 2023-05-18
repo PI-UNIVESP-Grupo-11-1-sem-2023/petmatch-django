@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petmatching - Cadastro ONG enviado</title>
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+</head>
+<body>
+    <header></header>
+    <main class = "confirmacao_ong">
+        <section class="confirmacao_ong_conteudo">
+            <p>Já salvamos os seus dados e entraremos em contato assim que possível.<br>
+                Muito obrigado!</p>
+            <button class="cadastro__submit" href="{% url 'login' %}">Cadastrar Pet</button>
+            <a class="botao_voltar" href="{% url 'index' %}" class="voltar">Voltar</a>
+        </section>
+    </main>
+    <footer></footer> 
+</body>
+</html>

@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Quicksand:wght@400;700&family=Titan+One&display=swap');
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-size: 100%;
+
+}
+
+/* para as imagens pararem de ficar em cima uma da outra, deletar essa parte de section */
+
+section {
+    border: 1px solid #163de9;
+    width: 100%;
+    height: 750px;
+}
+
+
+.cabecalho {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+position: relative;
+width: 100%;
+height: 145px;
+left: -1px;
+top: 0px;
+right: 0px;
+
+background: #005FB6;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.cabecalho-logo {
+position: absolute;
+width: 150px;
+height: 144px;
+left: 34px;
+top: 6px;
+}
+
+.cabecalho-menu {
+gap: 32px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: flex-start;
+padding: 0px;
+gap: 103px;
+
+position: absolute;
+width: 1201px;
+height: 25px;
+left: 211px;
+top: 66px;
+
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+}
+
+.cabecalho-menu-item {
+width: 59px;
+height: 25px;
+display: flex;
+
+font-family: 'Titan One';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 25px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+}
+
+
+.conteudo-inicial-imagem {
+
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    width: 840px;
+    height: 588px;
+    left: 680px;
+    top: 160px;
+        
+    border: 1px solid #FFFFFF;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+    
+    .conteudo-inicial-titulo {
+    position: absolute;
+    display: flex;
+    width: 870px;
+    height: 441px;
+    left: 200px;
+    top: 230px;
+    
+    font-family: 'Titan One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 95px;
+    line-height: 140px;
+    text-align: left;
+    
+    color: #005FB6;
+    
+    }
+
+    .conteudo-inicial-botao {
+
+background: #75BDFF;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 15px;
+border:none;
+display: flex;
+
+flex: none;
+order: 1;
+flex-grow: 0;
+
+position: absolute;
+width: 183px;
+height: 37px;
+left: 190px;
+top: 550px;
+
+font-family: 'Lilita One';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 37px;
+display: flex;
+text-align: right;
+
+
+color: #FFFFFF;
+
+    }
+
+
+    .conteudo-quemsomos-titulo {
+position: relative;
+width: 441px;
+height: 73px;
+left: 22px;
+top: 32px;
+
+font-family: 'Titan One';
+font-style: normal;
+font-weight: 400;
+font-size: 54px;
+line-height: 73px;
+text-align: center;
+
+color: #005FB6;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+        
+        .conteudo-quemsomos-texto {
+        position: relative;
+        width: 1376px;
+        height: 69px;
+        left: 32px;
+        top: 80px;
+        
+        font-family: 'Lilita One';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 46px;
+        text-align: justify;
+        
+        color: #313232;
+        
+            }
+
+ 
+            .prevencao-titulo {
+
+                width: 329px;
+                height: 47px;
+                
+                font-family: 'Quicksand';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 35px;
+                line-height: 50px;
+                text-align: justify;
+                                
+                color: #313232;
+                
+            
+            }
+            .prevencao-texto {
+            
+            width: 330px;
+            height: 50px;
+            display: inline-block;
+            font-family: 'Quicksand';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 25px;
+            text-align: justify;
+            
+            color: #313232;
+
+            }
+            
+            .prevencao-imagem {
+                position: relative;
+                display: inline-block;
+                width: 333.26px;
+                height: 250px;
+                left: -15.26px;
+                top: 0px;
+                border-radius: 10px;
+                display: flex; 
+                flex-direction:row;
+            }            
+
+            .acao-titulo {
+
+                width: 207px;
+                height: 47px;
+                
+                font-family: 'Quicksand';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 40px;
+                line-height: 50px;
+                text-align: center;
+                
+                color: #313232;
+
+            }
+            
+            .acao-texto {
+            
+                width: 238px;
+                height: 92px;
+                
+                font-family: 'Quicksand';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 25px;
+                text-align: justify;
+                
+                color: #313232;
+                
+            
+            }
+            
+            
+            .acao-imagem{
+            
+                width: 319px;
+                height: 250px;
+                
+                filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            
+            }
+            
+        
+
+

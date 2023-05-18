@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Quicksand:wght@400;700&family=Titan+One&display=swap');
+
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.cabecalho{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 4px;
+    color: #ffffff;
+    background: #005FB6;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.cabecalho-menu{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+#home{
+    height: 750px;
+}
+
+.conteudo_inicial{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1em;
+
+}
+
+.conteudo_inicial_titulo {
+    font-family: 'Titan One';
+    font-size: 5rem;    
+    color: #005FB6;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 32px;
+}
+
+.conteudo_inicial_imagem {
+    width: 50%;
+    align-items:last baseline;
+}
+
+.conteudo_inicial_box1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.conteudo_inicial_botao {
+    width: 40%;
+    height: 51px;
+    background: #75BDFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: 'Lilita One';
+    font-size: 1.5rem;
+    border-style: hidden;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    box-sizing: border-box;
+    height: 100vh;
+    font-family: 'Lilita One';
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+h1{
+    
+    font-family: 'Titan One';
+    font-size: 4rem;    
+    color: #005FB6;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 32px;
+
+}
+h2{
+    font-size: 1.5rem;
+}
+
+p, li {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.25rem;
+}
+
+a {
+    padding-right: 1em;
+    padding-left: 1em;
+    color: #ffffff;
+    
+}
+
+.botao_voltar {
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#quem_somos {
+    height: 650px;
+    margin: 1em;
+}
+
+.quem_somos_conteudo {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 8px;
+    margin: 2em;
+}
+
+#pets {
+    height: 750px;
+    margin: 1em;
+}
+
+.pets_conteudo {
+    margin: 2em;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#blog {
+    margin: 1em;
+    height: 600px;
+
+}
+
+.blog_conteudo {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cadastro_ong, .cadastro_pet {
+    height: 600px;
+}
+
+.cadastro_ong_conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 5em;
+}
+
+
+.cadastro_pet_conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 5em;
+    gap: 4px;
+}
+
+
+textarea {
+    width: 495px;
+    height: 24px;
+    padding: 0px;
+    margin: 4px;
+    box-sizing: border-box;
+    color: black;
+    background-color: #D9D9D9;
+}
+
+button {
+    width: 160px;
+    height: 40px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    background: #75BDFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: 'Lilita One';
+    font-size: 1.25rem;
+    border-style: hidden;
+}
+
+.voltar, .leia_mais, .quero_adotar {
+    width: 163px;
+    height: 35px;
+    background: #75BDFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: 'Lilita One';
+    font-size: 1.5rem;
+    border-style: hidden;
+}
+
+input {
+    width: 200px;
+    height: 24px;
+    padding: 0px;
+    margin: 2px;
+    box-sizing: border-box;
+    color: black;
+    font-size: 1.25rem;
+    background-color: #D9D9D9;
+}
+
+.login_conteudo_formulario {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 1em;
+}
+
+
+.login {
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.login_conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 383px;
+    height: 228px;
+}
+
+.confirmacao_pet {
+    margin: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirmacao_pet_conteudo {
+    display: flex;
+    flex-direction: column;
+    width: 873px;
+    height: 342px;
+    justify-content: center;
+    text-align: center;
+    gap: 16px;
+    align-items: center;
+}
+
+.confirmacao_ong {
+    margin: 15% 20%;
+}
+
+.confirmacao_ong_conteudo {
+    display: flex;
+    flex-direction: column;
+    width: 873px;
+    height: 232px;
+    justify-content: center;
+    text-align: center;
+    gap: 16px;
+    align-items: center;
+}

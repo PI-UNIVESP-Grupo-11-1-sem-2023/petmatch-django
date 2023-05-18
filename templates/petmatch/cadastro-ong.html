@@ -1,0 +1,66 @@
+{% load static %}
+{% csrf_token %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petmatching - Cadastro ONG</title>
+    <link rel="stylesheet" href="{% static 'styles/styles1.css' %}">
+</head>
+<section class="cabecalho">
+    <nav class="cabecalho-menu">
+        <a class="cabecalho-logo"><img src="{% static 'img/logo-menor.png' %}" alt="logo Petmatching"></a>
+        <a class=cabecalho-menu-item href="{% url 'index' %}">Home</a>
+        <a class=cabecalho-menu-item href="{% url 'index' %}">Quem Somos</a>
+        <a class=cabecalho-menu-item href="{% url 'index' %}">Pets</a>
+        <a class=cabecalho-menu-item href="{% url 'index' %}">Blog</a>
+        <a class=cabecalho-menu-item href="{% url 'cadastro_ong' %}">Cadastrar ONG</a>
+        <a class=cabecalho-menu-item href="{% url 'login' %}">Login ONG</a>
+    </nav>
+</section>
+<body>
+    <main>
+        <section class="cadastro_ong">
+             <h1>Quer participar dessa iniciativa? Cadastre-se !</h1>
+             <img class="conteudo_inicial_imagem" src="{% static 'img/background_home2.jpg' %}" alt="Imagem de cachorro">
+            <div class="cadastro__container">
+                <form action = "" method="POST">
+                    {% csrf_token %}
+
+                <h2 class="cadastro__title">Cadastro ONG</h1>
+                  <form class="cadastro__form">
+                  <input class="cadastro__input" type="Nome da ONG" placeholder="Nome" />
+                  <span class="cadastro__input-border"></span>
+                  <input class="cadastro__input" type="CPF/CNPJ" placeholder="CPF/CNPJ"/>
+                  <span class="cadastro__input-border"></span>
+                  <input class="cadastro__input" type="Telefone" placeholder="Telefone" />
+                  <span class="cadastro__input-border"></span>
+                  <input class="cadastro__input" type="E-mail" placeholder="E-mail"/>
+                  <span class="cadastro__input-border"></span>
+                  <input class="cadastro__input" type="CEP" placeholder="Cep" />
+                  <span class="cadastro__input-border"></span>
+                  <input class="cadastro__input" type="Rua" placeholder="Rua"/>
+                  <span class="cadastro__input-border"></span>
+                  <input class="cadastro__input" type="Cidade" placeholder="Cidade" />
+                  <span class="cadastro__input-border"></span>
+                  <input class="cadastro__input" type="Estado" placeholder="Estado"/>
+                  <span class="cadastro__input-border"></span>
+                  <input class="cadastro__input" type="Usuario" placeholder="Usuário">
+                  <span class="cadastro__input-border"></span>
+                  <input class="cadastro__input" type="Senha" placeholder="Senha">
+                  <span class="cadastro__input-border"></span>
+                  <input class="cadastro__input" type="Confirma-Senha" placeholder="Confirme a Senha">
+                  <span class="cadastro__input-border"></span>
+                  <button class="cadastro__submit" href="{% url 'login' %}">Enviar</button>
+                  <button class="botao_voltar" href="{% url 'index' %}">Página inicial</button>
+                </form>
+              </div>
+        </section>
+    </main>
+</body>
+<footer class="footer" Petmatch, encontro de melhores amigos !></footer> 
+
+</html>
+ 

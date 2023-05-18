@@ -1,0 +1,58 @@
+{% load static %}
+{% csrf_token %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petmatching - Cadastro ONG</title>
+    <link rel="stylesheet" href="{% static 'styles/styles1.css' %}">
+</head>
+<section class="cabecalho">
+    <nav class="cabecalho-menu">
+        <a class="cabecalho-logo"><img src="{% static 'img/logo-menor.png' %}" alt="logo Petmatching"></a>
+        <a class=cabecalho-menu-item href="{% url 'index' %}">Home</a>
+        <a class=cabecalho-menu-item href="{% url 'index' %}">Quem Somos</a>
+        <a class=cabecalho-menu-item href="{% url 'index' %}">Pets</a>
+        <a class=cabecalho-menu-item href="{% url 'index' %}">Blog</a>
+        <a class=cabecalho-menu-item href="{% url 'cadastro_ong' %}">Cadastrar ONG</a>
+        <a class=cabecalho-menu-item href="{% url 'login' %}">Login ONG</a>
+    </nav>
+</section>
+<body>
+    <main>
+        <section class="cadastro_ong">
+             <h1>Quer adicionar um candidato ao Match?</h1>
+             <img class="conteudo_inicial_imagem" src="{% static 'img/cachorro-petisco.jpg' %}" alt="Imagem de cachorro">
+            <div class="cadastro__container">
+                <form action = "" method="POST">
+                <h2 class="cadastro__title">Preencha com as características do pet</h1>
+                  <form class="cadastro__form">
+                  <input class="cadastro__input" type="Animal" placeholder="Animal" />
+                  <span class="cadastro__input-border"></span>
+                  <input class="cadastro__input" type="Nome do pet" placeholder="Nome do pet"/>
+                  <span class="cadastro__input-border"></span>
+                  <input class="cadastro__input" type="Idade" placeholder="idade" />
+                  <span class="cadastro__input-border"></span>
+                  <input class="cadastro__input" type="Porte" placeholder="Porte"/>
+                  <span class="cadastro__input-border"></span>
+                  <input class="cadastro__input" type="Sexo" placeholder="Sexo" />
+                  <span class="cadastro__input-border"></span>
+                  <input class="cadastro__input" type="Cor" placeholder="Cor"/>
+                  <span class="cadastro__input-border"></span>
+                  <input class="cadastro__input" type="Localizacao" placeholder="Localizacao" />
+                  <span class="cadastro__input-border"></span>
+                  <input class="cadastro__input" type="Comportamento" placeholder="Comportamento"/>
+                  <span class="cadastro__input-border"></span>
+                  <button class="submit_image">carregar foto</button>
+                  </form>
+                  <button class="cadastro__submit" href="{% url 'cadastro_enviado' %}">Enviar</button>
+                  <button class="botao_voltar" href="{% url 'index' %}">Página inicial</a>
+            </div>
+        </section>
+    </main>
+</body>
+<footer></footer> 
+
+</html>
