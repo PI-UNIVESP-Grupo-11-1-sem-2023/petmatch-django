@@ -1,12 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta name="description" content="Adote ou seja uma ONG parceira">
     <title>PetMatch!</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="{% static 'styles\styles.css' %}">
 </head>
 <body>
     <header></header>
@@ -14,7 +14,7 @@
         <section id="home">
             <section class="cabecalho">
                 <nav class="cabecalho-menu">
-                    <a class=cabecalho-logo href="index.html"><img src="img/logo-menor.png" alt="logo Petmatching"></a>
+                    <a class=cabecalho-logo href="index.html"><img src="{% static 'img/logo-menor.png' %}" alt="logo Petmatching"></a>
                     <a class=cabecalho-menu-item href="#home">Home</a>
                     <a class=cabecalho-menu-item href="#quem_somos">Quem Somos</a>
                     <a class=cabecalho-menu-item href="#pets">Pets</a>
@@ -28,19 +28,19 @@
                     <h1 class="conteudo_inicial_titulo">NÃO COMPRE, ADOTE!</H1>
                     <a class="conteudo_inicial_botao" href="#pets">Quero adotar</a>
                 </div>
-                <img class="conteudo_inicial_imagem" src="img/background_home2.jpg" alt="Imagem de cachorro">
+                <img class="conteudo_inicial_imagem" src="{% static 'img/background_home2.jpg' %}" alt="Imagem de cachorro">
             </section>
         </section>
         <section id="quem_somos">
             <h1>Quem somos</h1>
             <h2>O PetMatching é uma plataforma criada para ajudar animais de ONG’s e abrigos a encontrarem um novo lar. Agimos de forma ATIVA e PREVENTIVA:</h2>
             <section class="quem_somos_conteudo">
-                <img src="img/img3 dog_quemsomos.png" alt="">
+                <img src="{% static 'img/img3 dog_quemsomos.png' %}" alt="">
                 <div class="quem_somos_prevencao">
                     <h2>PREVENÇÃO</h2>
                     <p>disponibilizando material de conscientização e programa de adoção responsável.</p>
                 </div>
-                    <img src="img/img2 cat_quemsomos.png" alt="">
+                    <img src="{% static 'img/img2 cat_quemsomos.png' %}" alt="">
                 <div class="quem_somos_cao">
                     <h2>AÇÃO</h2>
                     <p>conectando animais de abrigos e ONG's com adotantes em potencial.</p>
@@ -53,7 +53,7 @@
             <section class="pets_conteudo">
                 <div class="Bob">
                     <h2>Bob</h2>
-                    <img src="img/img4 bob_queroadotar.png">
+                    <img src="{% static 'img/img4 bob_queroadotar.png' %}">
                     <ul>
                         <li>Animal: cachorro</li>
                         <li>Nome: Bob</li>
@@ -69,7 +69,7 @@
                 </div>
                 <div class="Julia">
                     <h2>Julia</h2>
-                    <img src="img/img5 julia_queroadotar.png">
+                    <img src="{% static 'img/img5 julia_queroadotar.png' %}">
                     <ul>
                         <li>Animal: gato</li>
                         <li>Nome: Julia</li>
@@ -85,7 +85,7 @@
                 </div>
                 <div class="Francisca">
                     <h2>Francisca</h2>
-                    <img src="img/img6 francisca_queroadotar.png">
+                    <img src="{% static 'img/img6 francisca_queroadotar.png' %}">
                     <ul>
                         <li>Animal: cachorro</li>
                         <li>Nome: Francisca</li>
@@ -105,13 +105,13 @@
         <section id="blog">
             <h1>Nosso blog</h1>
             <section class="blog_conteudo">
-                <img src="img/img7 dog_nossoblog.png" alt="">
+                <img src="{% static 'img/img7 dog_nossoblog.png' %}" alt="">
                 <div class="blog_conteudo_box1">
                     <h2>Maus tratos: como denunciar?</h2>
                     <br>
                     <a href="" class="leia_mais">Leia mais</a>
                 </div>
-                    <img src="img/img8 cat_nossoblog.png" alt="">
+                    <img src="{% static 'img/img8 cat_nossoblog.png' %}" alt="">
                 <div class="blog_conteudo_box2">
                     <h2>O que é uma adoção responsável?</h2>
                     <br>
