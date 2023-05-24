@@ -14,13 +14,13 @@
         <section id="home">
             <section class="cabecalho">
                 <nav class="cabecalho-menu">
-                    <a class=cabecalho-logo href="index.html"><img src="{% static 'img/logo-menor.png' %}" alt="logo Petmatching"></a>
-                    <a class=cabecalho-menu-item href="#home">Home</a>
+                    <a class=cabecalho-logo href="{% url 'index' %}"><img src="{% static 'img/logo-menor.png' %}" alt="logo Petmatching"></a>
+                    <a class=cabecalho-menu-item href="{% url 'index' %}">Home</a>
                     <a class=cabecalho-menu-item href="#quem_somos">Quem Somos</a>
                     <a class=cabecalho-menu-item href="#pets">Pets</a>
                     <a class=cabecalho-menu-item href="#blog">Blog</a>
-                    <a class=cabecalho-menu-item href="cadastro ong.html">Cadastrar ONG</a>
-                    <a class=cabecalho-menu-item href="login.html">Login ONG</a>
+                    <a class=cabecalho-menu-item href="{% url 'cadastro_ong' %}">Cadastrar ONG</a>
+                    <a class=cabecalho-menu-item href="{% url 'login' %}">Login ONG</a>
                 </nav>
             </section>
             <section class="conteudo_inicial">
