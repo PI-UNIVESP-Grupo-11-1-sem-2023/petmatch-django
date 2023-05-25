@@ -8,19 +8,26 @@
   <script defer src="./login-ong.js"></script>
   <title>Login</title>
 </head>
-<section class="cabecalho">
-  <nav class="cabecalho-menu">
-      <img class="cabecalho-logo" src="{% static 'img/logo-menor.png' %}" alt="logo Petmatching">
-      <a class=cabecalho-menu-item href="{% url 'index' %}">Home</a>
-      <a class=cabecalho-menu-item href="{% url 'index' %}">Quem Somos</a>
-      <a class=cabecalho-menu-item href="{% url 'index' %}">Pets</a>
-      <a class=cabecalho-menu-item href="{% url 'index' %}">Blog</a>
-      <a class=cabecalho-menu-item href="{% url 'cadastro_ong'%}">Cadastrar ONG</a>
-      <a class=cabecalho-menu-item href="{% url 'login' %}">Login ONG</a>
-  </nav>
-</section>
 <body>
-  <main class="login">
+  <main>
+
+    <section id="home">
+      <section class="cabecalho">
+          <nav class="cabecalho-menu">
+              <a class=cabecalho-logo href="{% url 'index' %}"><img src="{% static 'img/logo-menor.png' %}" alt="logo Petmatching"></a>
+              <a class=cabecalho-menu-item href="{% url 'index' %}">Home</a>
+              <a class=cabecalho-menu-item href="#quem_somos">Quem Somos</a>
+              <a class=cabecalho-menu-item href="#pets">Pets</a>
+              <a class=cabecalho-menu-item href="#blog">Blog</a>
+              <a class=cabecalho-menu-item href="{% url 'cadastro_ong' %}">Cadastrar ONG</a>
+              <a class=cabecalho-menu-item href="{% url 'login' %}">Login ONG</a>
+          </nav>
+      </section>
+
+    </section>
+
+
+  <section class="login">
     <img class="imagem-gato" src="{% static 'img/gato-login.jpg' %}" alt="gato preto sentado">
     <div class="login__container">
       <h1 class="login__title">Acesse sua conta</h1>
@@ -33,6 +40,8 @@
         <a class="login__reset" href="#">Esqueceu a senha?</a>
       </form>
     </div>
-  </main>
+  </section>
+  
+</main>
 </body>
 </html>

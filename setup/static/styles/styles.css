@@ -15,7 +15,7 @@
     width: 100%;
     padding: 4px;
     color: #ffffff;
-    background: #005FB6;
+    background: rgba(7, 115, 165, 0.863);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -134,7 +134,7 @@ a:hover {
 }
 
 #pets {
-    height: 750px;
+    min-height: 750px;
     margin: 1em;
 }
 
@@ -142,7 +142,14 @@ a:hover {
     margin: 2em;
     display: flex;
     justify-content: space-between;
+}
 
+.pets_conteudo div {
+    margin: 1em;
+}
+
+.pets_conteudo div a {
+    color: blue;
 }
 
 #blog {
@@ -287,3 +294,9 @@ input {
     gap: 16px;
     align-items: center;
 }
+
+.imagem_pet_home {
+    width: 50%;
+    height: 50%;
+}
+
