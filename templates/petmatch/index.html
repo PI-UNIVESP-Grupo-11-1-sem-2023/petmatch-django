@@ -1,101 +1,82 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta name="description" content="Adote ou seja uma ONG parceira">
-    <title>PetMatch!</title>
-    <link rel="stylesheet" href="{% static 'styles\styles.css' %}">
-</head>
-<body>
-    <header></header>
-    <main> 
-        <section id="home">
-            <section class="cabecalho">
-                <nav class="cabecalho-menu">
-                    <a class=cabecalho-logo href="{% url 'index' %}"><img src="{% static 'img/logo-menor.png' %}" alt="logo Petmatching"></a>
-                    <a class=cabecalho-menu-item href="{% url 'index' %}">Home</a>
-                    <a class=cabecalho-menu-item href="#quem_somos">Quem Somos</a>
-                    <a class=cabecalho-menu-item href="#pets">Pets</a>
-                    <a class=cabecalho-menu-item href="#blog">Blog</a>
-                    <a class=cabecalho-menu-item href="{% url 'cadastro_ong' %}">Cadastrar ONG</a>
-                    <a class=cabecalho-menu-item href="{% url 'login' %}">Login ONG</a>
-                </nav>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Adote ou seja uma ONG parceira">
+        <title>PetMatch!</title>
+        <link rel="stylesheet" href="{% static 'styles\styles.css' %}">
+    </head>
+    <body>
+        <main>
+            <section id="home">
+                <section class="cabecalho">
+                    <nav class="cabecalho-menu">
+                        <a class="cabecalho-logo" href="{% url 'index' %}">
+                            <img src="{% static 'img/logo-menor.png' %}" alt="logo Petmatching" />
+                        </a>
+                        <a class="cabecalho-menu-item" href="{% url 'index' %}">Home</a>
+                        <a class="cabecalho-menu-item" href="#quem_somos">Quem Somos</a>
+                        <a class="cabecalho-menu-item" href="{% url 'lista_pets' %}">Pets</a>
+                        <a class="cabecalho-menu-item" href="#blog">Blog</a>
+                        <a class="cabecalho-menu-item" href="{% url 'lista_ong' %}">ONGs Participantes</a>
+                        <a class="cabecalho-menu-item" href="/admin/login">Login</a>
+                    </nav>
+                </section>
+                <section class="conteudo_inicial">
+                    <div class="conteudo_inicial_box1">
+                        <h1 class="conteudo_inicial_titulo">NÃO COMPRE, ADOTE!</h1>
+                        <a class="conteudo_inicial_botao" href="#pets">Quero adotar</a>
+                    </div>
+                    <img class="conteudo_inicial_imagem"
+                         src="{% static 'img/background_home2.jpg' %}"
+                         alt="Imagem de cachorro">
+                </section>
             </section>
-            <section class="conteudo_inicial">
-                <div class="conteudo_inicial_box1">
-                    <h1 class="conteudo_inicial_titulo">NÃO COMPRE, ADOTE!</H1>
-                    <a class="conteudo_inicial_botao" href="#pets">Quero adotar</a>
-                </div>
-                <img class="conteudo_inicial_imagem" src="{% static 'img/background_home2.jpg' %}" alt="Imagem de cachorro">
+            <section id="quem_somos">
+                <h1>Quem somos</h1>
+                <h2>
+                    O PetMatching é uma plataforma criada para ajudar animais de ONG’s e abrigos a encontrarem um novo lar. Agimos de forma ATIVA e PREVENTIVA:
+                </h2>
+                <section class="quem_somos_conteudo">
+                    <img src="{% static 'img/img3 dog_quemsomos.png' %}" alt="" />
+                    <div class="quem_somos_prevencao">
+                        <h2>PREVENÇÃO</h2>
+                        <p>disponibilizando material de conscientização e programa de adoção responsável.</p>
+                    </div>
+                    <img src="{% static 'img/img2 cat_quemsomos.png' %}" alt="" />
+                    <div class="quem_somos_cao">
+                        <h2>AÇÃO</h2>
+                        <p>conectando animais de abrigos e ONG's com adotantes em potencial.</p>
+                    </div>
+                </section>
             </section>
-        </section>
-        <section id="quem_somos">
-            <h1>Quem somos</h1>
-            <h2>O PetMatching é uma plataforma criada para ajudar animais de ONG’s e abrigos a encontrarem um novo lar. Agimos de forma ATIVA e PREVENTIVA:</h2>
-            <section class="quem_somos_conteudo">
-                <img src="{% static 'img/img3 dog_quemsomos.png' %}" alt="">
-                <div class="quem_somos_prevencao">
-                    <h2>PREVENÇÃO</h2>
-                    <p>disponibilizando material de conscientização e programa de adoção responsável.</p>
-                </div>
-                    <img src="{% static 'img/img2 cat_quemsomos.png' %}" alt="">
-                <div class="quem_somos_cao">
-                    <h2>AÇÃO</h2>
-                    <p>conectando animais de abrigos e ONG's com adotantes em potencial.</p>
-                </div>
-            </section>
-        </section>
-
-        <section id="pets">
-            <h1>Nossos pets</h1>
-            <section class="pets_conteudo">
-                <div class="Amora">
-                    <h2>Amora</h2>
-                    <img class="imagem_pet_home" src="{% static 'img/img9amora.jpeg' %}">
-                    <ul>
-                        <li>Animal: cachorro</li>
-                        <li>Idade: 7 anos</li>
-                        <li>Porte: pequeno</li>
-                        <li>Sexo: fêmea</li>
-                        <li>Cor: preta</li>
-                        <li>Pelagem: curta</li>
-                        <li>ONG/lar temporário: Matilha da Bá</li>
-                        <li><ion-icon name="mail-outline"></ion-icon><a href="matilhadaba@hotmail.com">matilhadaba@hotmail.com</a></li>
-                    </ul>
-                </div>
-                <div class="Preta">
-                    <h2>Preta</h2>
-                    <img class="imagem_pet_home" src="{% static 'img/img10preta.jpeg' %}">
-                    <ul>
-                        <li>Animal: cachorro</li>
-                        <li>Idade: 8 anos</li>
-                        <li>Porte: medio</li>
-                        <li>Sexo: fêmea</li>
-                        <li>Cor: preto</li>
-                        <li>Pelagem: curta</li>
-                        <li>ONG/lar temporário: Matilha da Bá</li>
-                        <li><ion-icon name="mail-outline"></ion-icon><a href="matilhadaba@hotmail.com">matilhadaba@hotmail.com</a></li>
-                    </ul>
-                </div>
-                <div class="Estopa">
-                    <h2>Estopa</h2>
-                    <img class="imagem_pet_home" src="{% static 'img/img11estopa.jpeg' %}">
-                    <ul>
-                        <li>Animal: cachorro</li>
-                        <li>Idade: 5 anos</li>
-                        <li>Porte: médio</li>
-                        <li>Sexo: macho</li>
-                        <li>Cor: preto</li>
-                        <li>Pelagem: longo</li>
-                        <li>ONG/lar temporário: Matilha da Bá</li>
-                        <li><ion-icon name="mail-outline"></ion-icon><a href="matilhadaba@hotmail.com">matilhadaba@hotmail.com</a></li>
-                    </ul>
-                </div>
+            <section id="pets">
+                <h1>Nossos pets</h1>
+                <section class="pets_conteudo">
+                    {% for pet in pets %}
+                        <div class="Estopa">
+                            <h2>
+                                <a href="{% url 'detalhes_pet' pet_id=pet.id %}">{{ pet.nome }}</a>
+                            </h2>
+                            <img class="imagem_pet_home" src="{{ pet.foto.url }}" />
+                            <ul>
+                                <li>Animal: {{ pet.animal }}</li>
+                                <li>Idade: {{ pet.idade }} anos</li>
+                                <li>Porte: {{ pet.porte }}</li>
+                                <li>Sexo: {{ pet.sexo }}</li>
+                                <li>Cor: {{ pet.cor }}</li>
+                                <li>Comportamento: {{ pet.comportamento }}</li>
+                                <li>ONG/lar temporário: {{ pet.localizacao }}</li>
+                                <li>
+                                <ion-icon name="mail-outline"></ion-icon><a href="{{ pet.email_contato }}">{{ pet.email_contato }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                {% endfor %}
             </section>
         </section>
-
         <section id="blog">
             <h1>Nosso blog</h1>
             <section class="blog_conteudo">
@@ -105,7 +86,7 @@
                     <br>
                     <a href="" class="leia_mais">Leia mais</a>
                 </div>
-                    <img src="{% static 'img/img8 cat_nossoblog.png' %}" alt="">
+                <img src="{% static 'img/img8 cat_nossoblog.png' %}" alt="">
                 <div class="blog_conteudo_box2">
                     <h2>O que é uma adoção responsável?</h2>
                     <br>
@@ -114,7 +95,10 @@
             </section>
         </section>
     </main>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <footer></footer>
+    <script type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <footer>
+        2023
+    </footer>
 </body>
 </html>

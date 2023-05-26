@@ -179,12 +179,8 @@ a:hover {
 
 
 .cadastro_pet_conteudo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 5em;
-    gap: 4px;
+    margin: 2em;
+    width: 100%;
 }
 
 
@@ -296,136 +292,20 @@ input {
 }
 
 .imagem_pet_home {
-    width: 50%;
-    height: 50%;
+    width: auto;
+    height: 350px;
 }
 
+.detalhes_pet {
+    margin: 2em;
+    width: 100%;
+}
 
-/* INICIO pagina de login */
+.detalhes_pet a{
+    color: blue;
+}
 
-.imagem-gato {
-    width: 40%;
-    margin-top: 400px;
-  }
-  
-  .login {
-    height: 50vh;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-  }
-  
-  .login__container {
-    height: 600px;
-    width: 500px;
-    background-color: var(--white);
-    margin-right: 500px;
-    margin-top: 600px;;
-    box-sizing: border-box;
-    padding: 32px;
-    border-radius: 12px;
-    border-style:initial;
-    border-color: var(--input-linear);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .login__title {
-    margin-bottom: 32px;
-    color:rgba(8, 140, 201, 0.877);;
-    font-family: 'Lilita One';
-    text-shadow:  0 0 12px, black;
-  }
-  
-  .login__form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .login__input {
-    height: 48px;
-    width: 100%;
-    box-sizing: border-box;
-    padding-left: 8px;
-    border: unset;
-    outline: none;
-    position: relative;
-  }
-  
-  .login__input-border {
-    height: var(--border-height);
-    width: 100%;
-    margin-bottom: 16px;
-    background: var(--light-gray);
-    transition: .3s ease-in-out;
-  }
-  
-  .login__input-border::after {
-    content: '';
-    display: block;
-    height: var(--border-height);
-    width: 0;
-    margin-bottom: 16px;
-    background: var(--input-linear);
-    transition: .3s ease-in-out;
-  }
-  
-  .login__input:focus + .login__input-border::after {
-    width: 100%;
-  }
-  
-  .login__input-border.error {
-    background: var(--input-error);
-  }
-  
-  .login__input-border.error::after {
-    background: var(--input-error);
-  }
-  
-  .login__submit {
-    height: 48px;
-    width: 100%;
-    padding-left: 8px;
-    outline: none;
-    position: relative;
-    background: var(--button-linear);
-    background-size: 200%;
-    margin-bottom: 32px;
-    color: var(--white);
-    font-size: 20px;
-    font-family: 'Lilita One';
-    border: unset;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: 0.5s ease;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  }
-  
-  .login__submit:disabled {
-    background: var(--button-disabled);
-    cursor: not-allowed;
-  }
-  
-  .login__submit:hover {
-    background-position: right;
-  }
-  
-  .login__submit.success {
-    background: var(--button-success);
-  }
-  
-  .login__submit.error {
-    background: var(--input-error);
-  }
-  
-  .login__reset {
-    font-size: 12px;
-    color: var(--gray);
-    text-decoration: none;
-  }
-
-/* FIM pagina de login */
+.detalhes_pet .detalhe_pet {
+    width: 325px;
+    display:inline-block;
+}

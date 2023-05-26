@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Adote ou seja uma ONG parceira">
+        <title>PetMatch!</title>
+        <link rel="stylesheet" href="{% static 'styles\styles.css' %}">
+    </head>
+    <body>
+        <main>
+            <section id="home">
+                <section class="cabecalho">
+                    <nav class="cabecalho-menu">
+                        <a class="cabecalho-logo" href="{% url 'index' %}">
+                            <img src="{% static 'img/logo-menor.png' %}" alt="logo Petmatching" />
+                        </a>
+                        <a class="cabecalho-menu-item" href="{% url 'index' %}">Home</a>
+                        <a class="cabecalho-menu-item" href="#quem_somos">Quem Somos</a>
+                        <a class="cabecalho-menu-item" href="#pets">Pets</a>
+                        <a class="cabecalho-menu-item" href="#blog">Blog</a>
+                        <a class="cabecalho-menu-item" href="{% url 'lista_ong' %}">ONGs Participantes</a>
+                        <a class="cabecalho-menu-item" href="/admin/login">Login</a>
+                    </nav>
+                </section>
+                <section class="conteudo_inicial">
+                    <h1>{{ pet.nome }}</h1>
+                    <section class="pets_conteudo">
+                        <div class="Estopa">
+                            <img class="imagem_pet_home" src="{{ pet.foto.url }}" />
+                            <ul>
+                                <li>Animal: {{ pet.animal }}</li>
+                                <li>Idade: {{ pet.idade }} anos</li>
+                                <li>Porte: {{ pet.porte }}</li>
+                                <li>Sexo: {{ pet.sexo }}</li>
+                                <li>Cor: {{ pet.cor }}</li>
+                                <li>Comportamento: {{ pet.comportamento }}</li>
+                                <li>ONG/lar temporário: {{ pet.localizacao }}</li>
+                                <li>
+                                <ion-icon name="mail-outline"></ion-icon><a href="{{ pet.email_contato }}">{{ pet.email_contato }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+        </main>
+        <script type="module"
+                src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <footer>
+        </footer>
+    </body>
+</html>
