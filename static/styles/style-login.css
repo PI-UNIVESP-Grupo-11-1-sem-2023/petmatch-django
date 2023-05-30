@@ -13,14 +13,12 @@
   --border-height: 1px;
 }
 
-
 .cabecalho{
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 4px;
   color: #ffffff;
   background: rgba(7, 115, 165, 0.863);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -34,6 +32,9 @@
   align-items: center;
 }
 
+.cabecalho-menu-item{
+  color: white;
+}
 #home{
   height: 750px;
 }
@@ -171,4 +172,8 @@ body {
   font-size: 12px;
   color: var(--gray);
   text-decoration: none;
+}
+
+.pets_cadastrados {
+  width: 10%;
 }
