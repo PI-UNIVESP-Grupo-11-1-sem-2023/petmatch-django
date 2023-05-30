@@ -7,12 +7,9 @@ def lista_ong(request):
     ongs = ONG.objects.all()
     return render(request, 'petmatch/lista_ongs.html', {"ongs": ongs})
 
-<<<<<<< HEAD
-=======
 def cadastro_enviado(request):
     return render(request,'petmatch/cadastro-ong-enviado.html')
 
->>>>>>> 1d9209cc82f320ba6a7a0a331956b574be297ffa
 def index(request):
     #fazendo graça: cada hora aparece numa ordem :)
     pets = list(Pet.objects.all()[0:3])
