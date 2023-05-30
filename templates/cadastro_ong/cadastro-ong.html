@@ -1,0 +1,57 @@
+{% load static %}
+{% csrf_token %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petmatching - Cadastro ONG</title>
+    <link rel="stylesheet" href="{% static 'styles/styles1.css' %}">
+</head>
+<section class="cabecalho">
+    <nav class="cabecalho-menu">
+        <a class="cabecalho-logo"><img src="{% static 'img/logo-menor.png' %}" alt="logo Petmatching"></a>
+        <a class="cabecalho-menu-item" href="{% url 'index' %}">Home</a>
+        <a class="cabecalho-menu-item" href="#quem_somos">Quem Somos</a>
+        <a class="cabecalho-menu-item" href="{% url 'lista_pets' %}">Pets</a>
+        <a class="cabecalho-menu-item" href="#blog">Blog</a>
+        <a class="cabecalho-menu-item" href="{% url 'lista_ong' %}">ONGs Participantes</a>
+        <a class="cabecalho-menu-item" href="/admin/login">Login</a>
+    </nav>
+</section>
+<body>
+    <main>
+        <section class="cadastro_ong">
+             <h1>Quer participar dessa iniciativa? Cadastre-se !</h1>
+             <img class="conteudo_inicial_imagem" src="{% static 'img/background_home2.jpg' %}" alt="Imagem de cachorro">
+            <div class="cadastro__container">
+                <h2 class="cadastro__title">Cadastro ONG</h1>
+                <form class="cadastro__form" action = "." method="POST">
+                    {% csrf_token %}
+                        <input class="cadastro__input" type="text" id="Nome" name="Nome" placeholder="Nome" required />
+                        <span class="cadastro__input-border"></span>
+                        <input class="cadastro__input" type="text" id="CPF" name="CPF" placeholder="CPF/CNPJ">
+                        <span class="cadastro__input-border"></span>
+                        <input class="cadastro__input" type="text" id="Telefone" name="Telefone" placeholder="Telefone">
+                        <span class="cadastro__input-border"></span>
+                        <input class="cadastro__input" type="text" id="Email" name="Email" placeholder="E-mail" required />
+                        <span class="cadastro__input-border"></span>
+                        <input class="cadastro__input" type="text" id="Cep" name="Cep"placeholder="Cep" required />
+                        <span class="cadastro__input-border"></span>
+                        <input class="cadastro__input" type="text" id="Rua" name="Rua" placeholder="Rua" required />
+                        <span class="cadastro__input-border"></span>
+                        <input class="cadastro__input" type="text" id="Cidade" name="Cidade" placeholder="Cidade" required />
+                        <span class="cadastro__input-border"></span>
+                        <input class="cadastro__input" type="text" id="Estado" name="Estado" placeholder="Estado" required />
+                        <span class="cadastro__input-border"></span>
+                        <button type="submit" class="cadastro__submit">Enviar</button>
+                        <button class="botao_voltar" action="{% url 'index' %}">Página inicial</button>                
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+<footer></footer>
+</html>
+ 

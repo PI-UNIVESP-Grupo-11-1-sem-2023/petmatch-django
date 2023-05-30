@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Adote ou seja uma ONG parceira">
+        <title>Pets cadastrados</title>
+        <link rel="stylesheet" href="{% static 'styles\styles.css' %}">
+    </head>
+    <body>
+        <main>
+            <section id="home">
+                <section class="cabecalho">
+                    <nav class="cabecalho-menu">
+                        <a class="cabecalho-logo" href="{% url 'index' %}">
+                            <img src="{% static 'img/logo-menor.png' %}" alt="logo Petmatching" />
+                        </a>
+                        <a class="cabecalho-menu-item" href="{% url 'index' %}">Home</a>
+                        <a class="cabecalho-menu-item" href="#quem_somos">Quem Somos</a>
+                        <a class="cabecalho-menu-item" href="">Pets</a>
+                        <a class="cabecalho-menu-item" href="#blog">Blog</a>
+                        <a class="cabecalho-menu-item" href="">ONGs Participantes</a>
+                        <a class="cabecalho-menu-item" href="/admin/login">Login</a>
+                    </nav>
+                </section>
+                <section class="conteudo_inicial">
+                    <section id="pets">
+                        <h1>Pets cadastrados por você</h1>
+                        <h2>Ong:</h2><p> Lartemporariox </p>
+                        <section class="pets_conteudo">
+                            <div class="Bob">
+                                <h2>Bob</h2>
+                                <img src="{% static 'img/img4 bob_queroadotar.png' %}">
+                                <ul>
+                                    <li>Animal: cachorro</li>
+                                    <li>Idade: 3 Meses</li>
+                                    <li>Porte: Grande</li>
+                                    <li>Sexo: Macho</li>
+                                    <li>Cor: Preta</li>
+                                    <li>Comportamento: Filhote enérgico</li>
+                                    <li>ONG/lar temporário: lartemporariox</li>
+                                    <li>E-mail: xxxxxxx@xxxxxxx.com</li>
+                                </ul>
+                                <a class ="conteudo_inicial_botao">Editar</a>
+                            </div>
+                            <div class="Julia">
+                                <h2>Julia</h2>
+                                <img src="{% static 'img/img5 julia_queroadotar.png' %}">
+                                <ul>
+                                    <li>Animal: Gato</li>
+                                    <li>Idade: 11 meses</li>
+                                    <li>Porte: Pequeno</li>
+                                    <li>Sexo: Fêmea</li>
+                                    <li>Cor: Tricolor</li>
+                                    <li>Comportamento: Dócil</li>
+                                    <li>ONG/lar temporário: lartemporariox</li>
+                                    <li>E-mail: xxxxxxx@xxxxxxx.com</li>
+                                </ul>
+                                <a class ="conteudo_inicial_botao">Editar</a>
+                            </div>
+                            <div class="Francisca">
+                                <h2>Francisca</h2>
+                                <img src="{% static 'img/img6 francisca_queroadotar.png' %}">
+                                <ul>
+                                    <li>Animal: cachorro</li>
+                                    <li>Idade: 2 anos</li>
+                                    <li>Porte: Médio</li>
+                                    <li>Sexo: Fêmea</li>
+                                    <li>Cor: Preto e caramelo</li>
+                                    <li>Comportamento: Brincalhona</li>
+                                    <li>ONG/lar temporário: lartemporariox</li>
+                                    <li>E-mail: xxxxxxx@xxxxxxx.com</li>
+                                </ul>
+                                <a class ="conteudo_inicial_botao">Editar</a>
+                            </div>
+                        </section>
+                    </section>
+    <footer>
+    </footer>
+</body>
+</html>

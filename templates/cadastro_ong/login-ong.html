@@ -1,0 +1,43 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'styles/style-login.css' %}">
+  <title>Login Ong</title>
+</head>
+<section class="cabecalho">
+    <nav class="cabecalho-menu">
+        <a class="cabecalho-logo" href="{% url 'index' %}">
+            <img src="{% static 'img/logo-menor.png' %}" alt="logo Petmatching" />
+        </a>
+        <a class="cabecalho-menu-item" href="{% url 'index' %}">Home</a>
+        <a class="cabecalho-menu-item" href="#quem_somos">Quem Somos</a>
+        <a class="cabecalho-menu-item" href="{% url 'lista_pets' %}">Pets</a>
+        <a class="cabecalho-menu-item" href="#blog">Blog</a>
+        <a class="cabecalho-menu-item" href="{% url 'lista_ong' %}">ONGs Participantes</a>
+        <a class="cabecalho-menu-item" href="{% url 'login' %}">Login</a>
+    </nav>
+</section>
+<body>
+  <main class="login">
+    <img class="imagem-gato" src="{% static 'img/gato-login.jpg' %}" alt="gato preto sentado">
+    <div class="login__container">
+      <h1 class="login__title">Acesse sua conta</h1>
+      <form class="login__form" action = "." method="POST">
+          {% csrf_token %}
+            <input class="login__input" type="text" id="Usuario" name="Usuario" placeholder="Usuário" value="{{ Usuario }}">
+            <span class="login__input-border"></span>
+            {{ erros.Usuario }}
+            <input class="login__input" type="password" id="Senha" name="Senha" placeholder="Senha" value="{{ Senha }}">
+            <span class="login__input-border"></span>
+            {{ erros.Senha }}
+            <button class="login__submit" type="submit">Login</button>
+            <a class="login__reset" href="#">Esqueceu a senha?</a>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
+
