@@ -10,9 +10,6 @@ def lista_ong(request):
 def cadastro_enviado(request):
     return render(request,'petmatch/cadastro-ong-enviado.html')
 
-def login(request):
-    return render(request, 'petmatch/login-ong.html')
-
 def index(request):
     #fazendo graça: cada hora aparece numa ordem :)
     pets = list(Pet.objects.all()[0:3])

@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Adote ou seja uma ONG parceira">
         <title>PetMatch!</title>
-        <link rel="stylesheet" href="{% static 'styles\styles.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
     </head>
     <body>
         <main>
@@ -21,7 +21,7 @@
                         <a class="cabecalho-menu-item" href="{% url 'lista_pets' %}">Pets</a>
                         <a class="cabecalho-menu-item" href="#blog">Blog</a>
                         <a class="cabecalho-menu-item" href="{% url 'lista_ong' %}">ONGs Participantes</a>
-                        <a class="cabecalho-menu-item" href="/admin/login">Login</a>
+                        <a class="cabecalho-menu-item" href="{% url 'login' %}">Login</a>
                     </nav>
                 </section>
                 <section class="conteudo_inicial">
@@ -45,12 +45,25 @@
                         <h2>PREVENÇÃO</h2>
                         <p>disponibilizando material de conscientização e programa de adoção responsável.</p>
                     </div>
+                
                     <img src="{% static 'img/img2 cat_quemsomos.png' %}" alt="" />
                     <div class="quem_somos_cao">
                         <h2>AÇÃO</h2>
                         <p>conectando animais de abrigos e ONG's com adotantes em potencial.</p>
                     </div>
                 </section>
+            </section>
+            <section class="chamada_cadastro">
+                <div class="participe">
+                    <h1> Participe ! </h1>
+                    <p> Nossa intenção é dar as Ongs a visibilidade necessária para divulgar os pets em seus cuidados, para participar basta se cadastrar conosco que entraremos em contato e faremos Match acontecer!</p>
+                    <br></br>
+                    <h2> É hora de encontrar um lar! <h2>
+                    <img class="cachorro-feliz" src="{% static 'img/cachorro-feliz.jpg' %}" alt="cachorro-preto-caramelo">
+                    <a class="conteudo_inicial_botao" href="{% url 'cadastro_ong' %}">Cadastrar-se</a> 
+                 </div>
+            <br></br>
+                </br></br>
             </section>
             <section id="pets">
                 <h1>Nossos pets</h1>
