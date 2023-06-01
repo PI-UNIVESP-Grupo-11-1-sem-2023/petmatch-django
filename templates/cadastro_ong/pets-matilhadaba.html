@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Adote ou seja uma ONG parceira">
         <title>PetMatch!</title>
-        <link rel="stylesheet" href="{% static 'styles\styles.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
     </head>
     <body>
         <main>
@@ -17,11 +17,11 @@
                             <img src="{% static 'img/logo-menor.png' %}" alt="logo Petmatching" />
                         </a>
                         <a class="cabecalho-menu-item" href="{% url 'index' %}">Home</a>
-                        <a class="cabecalho-menu-item" href="#quem_somos">Quem Somos</a>
-                        <a class="cabecalho-menu-item" href="">Pets</a>
-                        <a class="cabecalho-menu-item" href="#blog">Blog</a>
-                        <a class="cabecalho-menu-item" href="">ONGs Participantes</a>
-                        <a class="cabecalho-menu-item" href="/admin/login">Login</a>
+                        <a class="cabecalho-menu-item" href="{% url 'index' %}">Quem Somos</a>
+                        <a class="cabecalho-menu-item" href="{% url 'lista_pets '%}">Pets</a>
+                        <a class="cabecalho-menu-item" href="{% url 'index' %}">Blog</a>
+                        <a class="cabecalho-menu-item" href="{% url 'lista_ong' %}">ONGs Participantes</a>
+                        <a class="cabecalho-menu-item" href="{% url 'login'%}">Login</a>
                     </nav>
                 </section>
                 <section class="conteudo_inicial">
@@ -76,6 +76,7 @@
                             </div>
                         </section>
                     </section>
+                    <a class ="conteudo_inicial_botao" href="{% url 'index' %}">Home</a>    
     <footer>
     </footer>
 </body>
