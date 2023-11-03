@@ -29,3 +29,6 @@ def lista_pets(request):
     except Pet.DoesNotExist:
         raise Http404("Pet não encontrado")
     return render(request, "petmatch/lista_pets.html", {"pets": pets})
+
+def acessibilidade(request):
+    return render(request,'petmatch/acessibilidade.html')
