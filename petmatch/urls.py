@@ -15,8 +15,8 @@ urlpatterns = [
     #path('pet_enviado/', pet_enviado, name='pet enviado'),
     path("lista_pets", views.lista_pets, name="lista_pets"),
     path("detalhes_pet/<int:pet_id>", views.detalhes_pet, name="detalhes_pet"),
-    path('cadastro_ong/', cadastro_ong, name='cadastro_ong')
-    path('acessibilidade/', acessibilidade, name='acessibilidade'),
+    path('cadastro_ong/', cadastro_ong, name='cadastro_ong'),
+    path('acessibilidade', views.acessibilidade, name='acessibilidade'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
