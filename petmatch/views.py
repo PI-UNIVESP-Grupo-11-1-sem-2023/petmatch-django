@@ -23,6 +23,13 @@ def detalhes_pet(request, pet_id):
         raise Http404("Pet não encontrado")
     return render(request, "petmatch/detalhes_pet.html", {"pet": pet})
 
+def localizacao_pet(request, pet_id):
+    try:
+        pet = Pet.objects.get(pk=pet_id)
+    except Pet.DoesNotExist:
+        raise Http404("Pet não encontrado")
+    return render(request, "petmatch/localizacao.html", {"pet": pet})
+
 def lista_pets(request):
     try:
         pets = Pet.objects.all()

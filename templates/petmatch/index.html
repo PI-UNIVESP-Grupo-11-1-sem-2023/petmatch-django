@@ -60,7 +60,7 @@
                     <br></br>
                     <h2> É hora de encontrar um lar! <h2>
                     <img class="cachorro-feliz" src="{% static 'img/cachorro-feliz.jpg' %}" alt="cachorro-preto-caramelo">
-                    <a class="conteudo_inicial_botao" href="{% url 'cadastro_ong' %}">Cadastrar-se</a> 
+                    <a class="conteudo_inicial_botao" href="{% url 'cadastro_ong' %}">Cadastrar-se</a>
                  </div>
             <br></br>
                 </br></br>
@@ -84,6 +84,7 @@
                                 <li>ONG/lar temporário: {{ pet.localizacao }}</li>
                                 <li>
                                 <ion-icon name="mail-outline"></ion-icon><a href="{{ pet.email_contato }}">{{ pet.email_contato }}</a>
+                                <a href="{% url 'localizacao_pet' pet.id %}">Localização</a>
                             </li>
                         </ul>
                     </div>

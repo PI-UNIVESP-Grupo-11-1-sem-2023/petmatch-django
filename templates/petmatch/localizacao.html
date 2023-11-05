@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -6,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Adote ou seja uma ONG parceira">
     <title>PetMatch!</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJOjXKKbgbBDPLgKB4oIaN5t5JJ7ZMhk8&libraries=places"></script>
+    <link rel="stylesheet" href="{% static 'styles\styles.css' %}">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAu4G1HHBGxyJkKKlkwxZ_538odvtGRPE0&libraries=places"></script>
     <style>
         /* Estilo básico para o contêiner do mapa */
         #map {
@@ -43,23 +44,40 @@
 
                 function initMap() {
                     // Coordenadas
-                    var timesSquare = {
-                        lat: -23.626280716416858,
-                        lng: -46.66430161918804
-                    };
+                    /*var timesSquare = {
+                        lat: {{ pet.latitude |stringformat:"f"}},
+                        lng: {{ pet.longitude |stringformat:"f"}}
+                    };*/
+                    geocoder = new google.maps.Geocoder();
+
+                    geocoder.geocode( { 'address' : '{{ pet.localizacao }}' }, function( results, status ) {
+                        if( status == google.maps.GeocoderStatus.OK ) {
+                            console.log(results[0])
+                            //In this case it creates a marker, but you can get the lat and lng from the location.LatLng
+                            map.setCenter( results[0].geometry.location );
+                            var marker = new google.maps.Marker( {
+                                map     : map,
+                                position: results[0].geometry.location,
+                                title: results[0].formatted_address
+                            } );
+                        } else {
+                            alert( 'Geocode was not successful for the following reason: ' + status );
+                        }
+                    } );
+
 
                     // Inicializa o mapa
                     map = new google.maps.Map(document.getElementById('map'), {
-                        center: timesSquare,
+                        //center: timesSquare,
                         zoom: 15 // Ajuste o nível de zoom conforme desejado
                     });
 
-                    // Adiciona um marcador na localização
+                    /*// Adiciona um marcador na localização
                     var marker = new google.maps.Marker({
                         position: timesSquare,
                         map: map,
                         title: 'Seu pet'
-                    });
+                    });*/
                 }
 
                 // Chame a função de inicialização do mapa após o carregamento da página
@@ -67,7 +85,35 @@
             </script>
         </section>
     </main>
-    <footer></footer>
+    <footer>
+        <div class="container">
+            <!-- primeira coluna-->
+            <ul>
+                <h3>PetMatching</h3>
+                <p> Não compre! Adote!</p>
+                <p> 2023 </p>
+            </ul>
+            
+            <!-- segunda coluna-->
+            <ul>
+                <h3>Links</h3>
+                <p><a href="cadastro_ong">Cadastrar ONG</a><p>
+                <p><a href="login">Quem somos</a></p>
+            </ul>
+            
+            <!-- terceira coluna-->
+            <ul>
+                <h3><a href="acessibilidade">Acessibilidade</a></h3> 
+            </ul>
+            <!-- quarta coluna-->
+            <ul>
+                <h3>Contate-nos</h3>
+                <p> (11) 123456789 </p>
+                <p> petmatching@gmail.com</p>
+                <p> Brasil</p>
+            </ul>            
+        </div>
+    </footer>
 </body>
 
 </html>
