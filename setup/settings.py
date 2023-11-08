@@ -26,7 +26,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '.vercel.app']
+ALLOWED_HOSTS = ['localhost', '15.228.246.15', '172.31.32.175', 'ec2-15-228-246-15.sa-east-1.compute.amazonaws.com', 'petmatching.com.br',] # Permitindo as interfaces de rede e domínio acessarem a aplicacao
 
 
 # Application definition
@@ -77,23 +77,25 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+#CONFIG INATIVADA DO SQLITE PARA SER USADO O DB MYSQL DO RDS NA AWS
+#DATABASES = { 
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "petmatch",
+        "USER": "admin",
+        "PASSWORD": "admin123",
+        "HOST": "petmatch-database.ctmleplmx0se.sa-east-1.rds.amazonaws.com", # ENDPOINT DO BANCO NO RDS.
+        "PORT": "3306",
     }
 }
 
-#DATABASES = {
-#    "default": {
-#        "ENGINE": "django.db.backends.mysql",
-#        "NAME": "petmatch",
-#        "USER": "root",
-#        "PASSWORD": "senha",
-#        "HOST": "127.0.0.1",
-#        "PORT": "3306",
-#    }
-#}
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -128,13 +130,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/home/petmatch/petmatch-django/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'setup/static')
+    os.path.join(BASE_DIR, '/home/petmatch/petmatch-django/setup/static')
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, '/home/petmatch/petmatch-django/static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

@@ -1,0 +1,7 @@
+Para configuração da infra, deve seguir este documento que tem todas as informações necessárias para criar o ambiente de produção virtualizado para o Django: ttps://www.notion.so/Django-em-Nuvem-AWS-3f23adb2b3e54cef816f5f2a8dda942b?pvs=4 
+
+
+-- A instalação do nginx deve ser feita no ambiente, a atual em uso é a nginx-1.18. A pasta nginx/ neste diretório deve ser copiada para o /etc/com cp -r nginx/ /etc/ . O certificado deve estar renovado, pois sua validade atual é até 06/02/24, em testes a página demonstrou não abrir no mobile por falta do certificado.
+
+-- O arquivo django.service é a configuração do framework como um serviço, nele está configurado o Gunicorn, servidor wsgi, intermediador de APIs em python.
+este arquivo deve ser copiado para /etc/systemd/system/ e posteriormente o systemd deve ser restartado com systemctl daemon-reload , após isso o django pode ser iniciado pelo systemd com systemctl start django, lembre-se de encaminhar o script django-initial.sh para o workdir do projeto ~/petmatch-django, pode ser necessário checar se está com permissão de execução.

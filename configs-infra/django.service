@@ -1,0 +1,15 @@
+[Unit]
+Description=petmatch-django 
+After=network.target
+
+[Service]
+ExecStart= 
+WorkingDirectory=/home/petmatch/petmatch-django
+ExecStart=/home/petmatch/petmatch-django/django-initial.sh
+User=petmatch
+Group=petmatch
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
