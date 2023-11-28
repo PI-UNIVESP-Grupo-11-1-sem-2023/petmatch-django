@@ -28,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '15.228.246.15', '172.31.32.175', 'ec2-15-228-246-15.sa-east-1.compute.amazonaws.com', 'petmatching.com.br',] # Permitindo as interfaces de rede e domínio acessarem a aplicacao
 
+SECURE_REFERRER_POLICY = 'same-origin'
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Application definition
 
