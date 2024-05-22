@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Questionário de Adoção de Pet</title>
+<style>
+    img { width: 800px; }
+    p {text-align: justify;}
+</style>
+</head>
+<body>
+    <h1> Tipo de pet, moradia e situação atual</h1>
+    <img src="analise1.png">
+    <p>
+A maioria dos respondentes preferem cachorros. Esse dado pode ser utilizado para focar campanhas de adoção em cães ou programas de conscientização sobre este animal em específico. Os números evidenciam uma oportunidade, também, de trabalhar com campanhas de desmistificação em relação a outros tipos de animais, como gatos.
+A distribuição de moradia entre os respondentes é um resultado relevante, pois pode determinar o tipo de animal que seria mais adequado para o adotante, considerando o espaço disponível para animais de portes maiores.
+A pesquisa indicou, também, que a maioria dos respondentes não possui pets atualmente. Seria interessante, em uma pesquisa futura, entender os motivos de não os ter. Ainda assim, o número indica pessoas que são adotantes em potencial. Considerando este mesmo público, seria interessante pensar em programas especiais para atrair pessoas que já tiveram animais e que, por algum motivo, não os têm mais. Iniciativas oferendo conversas e suporte para encorajar uma nova adoção podem ser interessantes.
+    </p>
+    <h1>
+        Preferência por cor e sexo do pet
+    </h1>
+    <img src="analise2.png">
+    <p>
+        A grande maioria dos respondentes (220 pessoas) indica não ter preferência quanto à cor do animal. Esse dado sugere uma flexibilidade que pode ser vantajosa em campanhas de adoção. Além disso, os dados indicam que 15 pessoas preferem pets da cor preta. Esses animais são frequentemente mais difíceis de serem adotados devido a superstições. Os resultados sugerem uma chance de promover uma adoção mais baseada em comportamento e compatibilidade, em vez de características físicas.
+A maioria, 147 respondentes, não tem preferência pelo sexo do pet, o que é positivo para facilitar adoções sem discriminações de gênero. Desses, 67 preferem fêmeas. Tal preferência pode estar ligada a senso comum relacionado à temperamento ou até mesmo em relação à procriação. 
+    </p>
+    <h1> Preferência por porte, raça e faixa etária</h1>
+    <img src="analise2.png">
+    <p> A maioria dos respondentes (121 pessoas), prefere pets de porte pequeno. Isso pode refletir a conveniência de manter pets menores e/ou estar relacionada com o espaço disponível.
+        A grande maioria, 77,3% (191 pessoas), não tem preferência por pets de raça definida, demonstrando uma tendência positiva para a adoção de animais sem raça específica, que costumam ser a maioria em abrigos e ONG’s. É importante utilizar essa informação para educar os cidadãos acerca dos benefícios de adotar pets sem raça.
+        Uma grande maioria, 130 pessoas, prefere adotar filhotes. Este dado evidencia o cotidiano, já que filhotes dão a percepção de que são mais fáceis de treinar e de criar vínculos, além da possibilidade de o adotante acompanhar todo o crescimento do animal. Enquanto isso, apenas 1 pessoa expressou preferência por pets mais velhos, destacando uma grande necessidade de promoção para a adoção de pets idosos.
+        Esses dados coletados oferecem uma visão valiosa sobre as atitudes atuais em relação à adoção de animais e podem ajudar a ONG a alinhar suas mensagens, campanhas e eventos de adoção de forma a maximizar o impacto e promover uma cultura de adoção consciente e responsável.
+</p>
+
+<h1>Pretende adotar? Descubra agora o Pet ideal para você!</h1>
+<form id="petSurveyForm">
+    <p>Quantas horas por dia você está em casa?
+        <select name="hoursHome">
+            <option value="lessThan4">Menos de 4 horas</option>
+            <option value="between4And8">Entre 4 e 8 horas</option>
+            <option value="moreThan8">Mais de 8 horas</option>
+        </select>
+    </p>
+    <p>Você tem crianças pequenas em casa?
+        <input type="radio" name="children" value="yes"> Sim
+        <input type="radio" name="children" value="no" checked> Não
+    </p>
+    <p>Qual é o tamanho da sua residência?
+        <select name="houseSize">
+            <option value="small">Apartamento pequeno</option>
+            <option value="medium">Casa ou apartamento de tamanho médio</option>
+            <option value="large">Casa grande com quintal</option>
+        </select>
+    </p>
+    <p>Você tem alergias a animais?
+        <select name="allergies">
+            <option value="severe">Sim, alergias severas</option>
+            <option value="mild">Sim, alergias leves</option>
+            <option value="no">Não tenho alergias</option>
+        </select>
+    </p>
+    <p>Quanto tempo diário você pode dedicar a cuidar de um animal?
+        <select name="timeForPet">
+            <option value="lessThan30">Menos de 30 minutos</option>
+            <option value="between30And60">Entre 30 minutos e 1 hora</option>
+            <option value="moreThan60">Mais de 1 hora</option>
+        </select>
+    </p>
+    <p>Você está disposto a gastar com cuidados veterinários, alimentação e outros custos?
+        <select name="expenses">
+            <option value="noLimit">Sim, não me preocupo com os custos</option>
+            <option value="moderate">Posso gastar uma quantia moderada</option>
+            <option value="limited">Prefiro não ter muitos gastos adicionais</option>
+        </select>
+    </p>
+    <p>Qual nível de atividade você prefere em um animal de estimação?
+        <select name="activityLevel">
+            <option value="high">Alto, gosto de animais muito ativos</option>
+            <option value="moderate">Moderado, prefiro um equilíbrio</option>
+            <option value="low">Baixo, prefiro animais mais calmos</option>
+        </select>
+    </p>
+    <p>Você tem outros animais de estimação em casa?
+        <input type="radio" name="otherPets" value="yes"> Sim
+        <input type="radio" name="otherPets" value="no" checked> Não
+    </p>
+    <p>Quão importante é para você ter um animal de estimação que seja treinável?
+        <select name="trainability">
+            <option value="very">Muito importante, quero ensinar muitos truques</option>
+            <option value="somewhat">Algo importante, mas não essencial</option>
+            <option value="notImportant">Não é importante</option>
+        </select>
+    </p>
+    <button type="button" onclick="calculateResult()">Descubra seu Pet Ideal!</button>
+</form>
+
+<p id="resultText"></p>
+<img id="resultImage" src="" alt="Resultado da Imagem" style="display: none;">
+
+<script>
+function calculateResult() {
+    var scores = { dog: 0, cat: 0, none: 0 };
+    
+    // valores
+    var form = document.forms[0];
+    var hoursHome = form.elements["hoursHome"].value;
+    var children = form.elements["children"].value;
+    var houseSize = form.elements["houseSize"].value;
+    var allergies = form.elements["allergies"].value;
+    var timeForPet = form.elements["timeForPet"].value;
+    var expenses = form.elements["expenses"].value;
+    var activityLevel = form.elements["activityLevel"].value;
+    var otherPets = form.elements["otherPets"].value;
+    var trainability = form.elements["trainability"].value;
+
+    // calcular pontos
+    // Hours Home
+    if (hoursHome === "lessThan4") { scores.none += 2; scores.cat += 1; }
+    else if (hoursHome === "between4And8") { scores.cat += 1; scores.dog += 1; }
+    else if (hoursHome === "moreThan8") { scores.dog += 2; }
+
+    // Children
+    if (children === "yes") { scores.dog += 2; scores.cat += 1; }
+
+    // House Size
+    if (houseSize === "small") { scores.cat += 2; scores.none += 1; }
+    else if (houseSize === "medium") { scores.cat += 1; scores.dog += 2; }
+    else if (houseSize === "large") { scores.dog += 3; }
+
+    // Allergies
+    if (allergies === "severe") { scores.none += 3; }
+    else if (allergies === "mild") { scores.cat += 2; }
+    else if (allergies === "no") { scores.cat += 1; scores.dog += 1; }
+
+    // Time for Pet
+    if (timeForPet === "lessThan30") { scores.none += 3; }
+    else if (timeForPet === "between30And60") { scores.cat += 2; }
+    else if (timeForPet === "moreThan60") { scores.dog += 2; }
+
+    // Expenses
+    if (expenses === "noLimit") { scores.dog += 1; scores.cat += 1; }
+    else if (expenses === "limited") { scores.none += 2; }
+
+    // Activity Level
+    if (activityLevel === "high") { scores.dog += 2; }
+    else if (activityLevel === "low") { scores.cat += 2; scores.none += 1; }
+
+    // Other Pets
+    if (otherPets === "yes") {scores.cat += 1;}
+    else if (otherPets === "no") {scores.dog += 1;}
+
+    // Trainability
+    if (trainability === "very") { scores.dog += 2; }
+    else if (trainability === "somewhat") { scores.cat += 1; }
+
+    var resultText = document.getElementById("resultText");
+    var resultImage = document.getElementById("resultImage");
+
+    // determinar maxScore
+    var maxScore = Math.max(scores.dog, scores.cat, scores.none);
+    var result = "";
+    if (maxScore === scores.dog) {
+        resultText.innerText = "Um cachorro seria o pet ideal para você!";
+        resultImage.src = "cachorro.jpeg"; 
+        resultImage.alt = "Imagem de um cachorro";
+        resultImage.style.display = "block";
+    } else if (maxScore === scores.cat) {
+        resultText.innerText = "Um gato seria o pet ideal para você!";
+        resultImage.src = "gato.jpeg"; 
+        resultImage.alt = "Imagem de um gato";
+        resultImage.style.display = "block";
+    } else if (maxScore === scores.none) {
+        resultText.innerText = "Talvez agora não seja o melhor momento para você ter um pet.";
+        resultImage.src = "negando.jpg"; 
+        resultImage.alt = "Imagem simbolizando não adotar um pet";
+        resultImage.style.display = "block";
+    }
+}
+</script>
+</script>
+
+</body>
+</html>
