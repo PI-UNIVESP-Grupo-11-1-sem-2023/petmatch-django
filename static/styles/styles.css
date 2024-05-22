@@ -29,9 +29,7 @@
     align-items: center;
 }
 
-#home{
-    height: 750px;
-}
+/* Conteúdo inicial */
 
 .conteudo_inicial{
     display: flex;
@@ -50,12 +48,7 @@
     margin: 32px;
 }
 
-.conteudo_inicial_imagem {
-    width: 50%;
-    align-items:last baseline;
-}
-
-.conteudo_inicial_box1 {
+.conteudo_inicial_box {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,20 +56,16 @@
 }
 
 .conteudo_inicial_botao {
-    width: 40%;
-    height: 51px;
+    width: 20%;
+    height: 2em;
     background: #75BDFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
-    color: #ffffff;
-    font-family: 'Lilita One';
-    font-size: 1.5rem;
-    border-style: hidden;
-    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    }
+    color: #000000;
+}
 
 /* Estilos gerais */
 
@@ -137,9 +126,7 @@ a:hover {
 
 /* Seções */
 #quem_somos {
-height: 650px;
     margin: 1em;
-margin-top: 5em;
 }
 
 .quem_somos_conteudo {
@@ -151,7 +138,6 @@ margin-top: 5em;
 }
 
 #pets {
-    min-height: 750px;
     margin: 1em;
 }
 
@@ -161,18 +147,8 @@ margin-top: 5em;
     justify-content: space-between;
 }
 
-.pets_conteudo div {
-    margin: 1em;
-}
-
-.pets_conteudo div a {
-    color: blue;
-}
-
 #blog {
     margin: 1em;
-    height: 600px;
-
 }
 
 .blog_conteudo {
@@ -194,63 +170,11 @@ margin-top: 5em;
     margin-top: 5em;
 }
 
-
-.cadastro_pet_conteudo {
-    margin: 2em;
-    width: 100%;
-}
-
-/* Formulários */
-textarea {
-    width: 100%;
-    height: 24px;
-    padding: 0px;
-    margin: 4px;
-    box-sizing: border-box;
-    color: black;
-    background-color: #D9D9D9;
-}
-
-button, .voltar, .leia_mais, .quero_adotar {
-    width: 160px;
-    height: 40px;
-    margin-top: 2px;
-    margin-bottom: 5px;
-    background: #75BDFF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 8px;
-    color: #000000;
-    font-family: 'Lilita One';
-    font-size: 1.25rem;
-    border-style: hidden;
-}
-
-input {
-    width: 100%;
-    height: 24px;
-    padding: 0px;
-    margin: 2px;
-    box-sizing: border-box;
-    color: black;
-    font-size: 1.25rem;
-    background-color: #D9D9D9;
-}
-
-.login_conteudo_formulario {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 5px;
-    margin-bottom: 1em;
-}
-
 .login {
     height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .login_conteudo {
@@ -269,51 +193,56 @@ input {
     justify-content: center;
 }
 
-.confirmacao_pet_conteudo {
+.confirmacao_pet_conteudo, .confirmacao_ong_conteudo {
     display: flex;
     flex-direction: column;
     width: 873px;
-    height: 342px;
+    height: auto;
     justify-content: center;
     text-align: center;
     gap: 16px;
     align-items: center;
 }
 
-.confirmacao_ong {
-    margin: 15% 20%;
+/* Estilo para o formulário de questionário */
+.blog_formulario {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+
 }
 
-.confirmacao_ong_conteudo {
-    display: flex;
-    flex-direction: column;
-    width: 873px;
-    height: 232px;
-    justify-content: center;
-    text-align: center;
-    gap: 16px;
-    align-items: center;
+/* Estilo para o resultado do questionário */
+#resultText {
+    font-size: 18px;
+    margin-bottom: 10px;
+
 }
 
-.imagem_pet_home {
-    width: auto;
-    height: 350px;
+#resultado img {
+    display: none;
 }
 
-.detalhes_pet {
-    margin: 2em;
-    width: 100%;
+/* Estilo para o botão de descobrir o pet ideal */
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-.detalhes_pet a{
-    color: blue;
+button:hover {
+    background-color: #555;
 }
 
-.detalhes_pet .detalhe_pet {
-    width: 325px;
-    display:inline-block;
+/* Estilo para as imagens de resultado */
+#resultImage {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
 }
-
 
 /* Rodapé */
 footer{
@@ -341,6 +270,10 @@ footer .container ul > p {
 footer .container li {
     margin: 10px 0;
 }
+
+/* Blog */
+
+
 
 /* Responsividade */
 @media screen and (max-width: 768px) {
@@ -418,5 +351,25 @@ footer .container li {
         width: 100%;
         text-align: center;
     }
+
+
 }
 
+.info_pet_1, .info_pet_2, .info_pet_3 {
+    margin: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagem_blog{
+    width: 65%;
+}
+
+.blog_formulario{
+    margin: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
