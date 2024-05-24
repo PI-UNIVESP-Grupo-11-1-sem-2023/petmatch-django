@@ -1,126 +1,106 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta name="description" content="Adote ou seja uma ONG parceira">
-    <title>PetMatch!</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-    <header></header>
-    <main> 
-        <section id="home">
-            <section class="cabecalho">
-                    <a href="index.html"><img src="img/logo-menor.png" alt="logo Petmatching"></a>
-                <nav class="cabecalho-menu">
-                    <a class=cabecalho-menu-item href="#home">Home</a>
-                    <a class=cabecalho-menu-item href="#quem_somos">Quem Somos</a>
-                    <a class=cabecalho-menu-item href="#pets">Pets</a>
-                    <a class=cabecalho-menu-item href="blog.html">Blog</a>
-                    <a class=cabecalho-menu-item href="cadastro ong.html">Cadastrar ONG</a>
-                    <a class=cabecalho-menu-item href="login.html">Login ONG</a>
-                </nav>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Adote ou seja uma ONG parceira">
+        <title>PetMatch!</title>
+        <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+    </head>
+    <body>
+        <main>
+            <section id="home">
+                <section class="cabecalho">
+                    <nav class="cabecalho-menu">
+                        <a class="cabecalho-logo" href="{% url 'index' %}">
+                            <img src="{% static 'img/logo-menor.png' %}" alt="logo Petmatching" />
+                        </a>
+                        <a class="cabecalho-menu-item" href="{% url 'index' %}">Home</a>
+                        <a class="cabecalho-menu-item" href="#quem_somos">Quem Somos</a>
+                        <a class="cabecalho-menu-item" href="{% url 'lista_pets' %}">Pets</a>
+                        <a class="cabecalho-menu-item" href="#blog">Blog</a>
+                        <a class="cabecalho-menu-item" href="{% url 'lista_ong' %}">ONGs Participantes</a>
+                        <a class="cabecalho-menu-item" href="{% url 'login' %}">Login</a>
+                    </nav>
+                </section>
+                <section class="conteudo_inicial">
+                    <div class="conteudo_inicial_box1">
+                        <h1 class="conteudo_inicial_titulo">NÃO COMPRE, ADOTE!</h1>
+                        <a class="conteudo_inicial_botao" href="#pets">Quero adotar</a>
+                    </div>
+                    <img class="conteudo_inicial_imagem"
+                         src="{% static 'img/background_home2.jpg' %}"
+                         alt="Imagem de cachorro">
+                </section>
             </section>
-            <section class="conteudo_inicial">
-                <div class="conteudo_inicial_box">
-                    <h1 class="conteudo_inicial_titulo">NÃO COMPRE, ADOTE!</H1>
-                    <a class="conteudo_inicial_botao" href="#pets">Quero adotar</a>
-                </div>
-                <img class="imagem" src="img/background_home2.jpg" alt="Imagem de cachorro">
+            <section id="quem_somos">
+                <h1>Quem somos</h1>
+                <h2>
+                    O PetMatching é uma plataforma criada para ajudar animais de ONG’s e abrigos a encontrarem um novo lar. Agimos de forma ATIVA e PREVENTIVA:
+                </h2>
+                <section class="quem_somos_conteudo">
+                    <img src="{% static 'img/img3 dog_quemsomos.png' %}" alt="Imagem de um cachorro com pelagem de cor preta e bege, e uma mão humana em seu focinho" />
+                    <div class="quem_somos_prevencao">
+                        <h2>PREVENÇÃO</h2>
+                        <p>disponibilizando material de conscientização e programa de adoção responsável.</p>
+                    </div>
+                
+                    <img src="{% static 'img/img2 cat_quemsomos.png' %}" alt="Imagem de um gato de pelagem laranja, recebendo carinho de um humano" />
+                    <div class="quem_somos_cao">
+                        <h2>AÇÃO</h2>
+                        <p>conectando animais de abrigos e ONG's com adotantes em potencial.</p>
+                    </div>
+                </section>
+            </section>
+            <section class="chamada_cadastro">
+                <div class="participe">
+                    <h1>Participe !</h1>
+                    <p>Nossa intenção é dar as Ongs a visibilidade necessária para divulgar os pets em seus cuidados, para participar basta se cadastrar conosco que entraremos em contato e faremos Match acontecer!</p>
+                    <br></br>
+                    <h2> É hora de encontrar um lar! <h2>
+                    <img class="cachorro-feliz" src="{% static 'img/cachorro-feliz.jpg' %}" alt="cachorro-preto-caramelo">
+                    <a class="conteudo_inicial_botao" href="{% url 'cadastro_ong' %}">Cadastrar-se</a>
+                 </div>
+            <br></br>
+                </br></br>
+            </section>
+            <section id="pets">
+                <h1>Nossos pets</h1>
+                <section class="pets_conteudo">
+                    {% for pet in pets %}
+                        <div class="Estopa">
+                            <h2>
+                                <a href="{% url 'detalhes_pet' pet_id=pet.id %}">{{ pet.nome }}</a>
+                            </h2>
+                            <img class="imagem_pet_home" src="{{ pet.foto.url }}" />
+                            <ul>
+                                <li>Animal: {{ pet.animal }}</li>
+                                <li>Idade: {{ pet.idade }} anos</li>
+                                <li>Porte: {{ pet.porte }}</li>
+                                <li>Sexo: {{ pet.sexo }}</li>
+                                <li>Cor: {{ pet.cor }}</li>
+                                <li>Comportamento: {{ pet.comportamento }}</li>
+                                <li>ONG/lar temporário: {{ pet.localizacao }}</li>
+                                <li>
+                                <ion-icon name="mail-outline"></ion-icon><a href="{{ pet.email_contato }}">{{ pet.email_contato }}</a>
+                                <a href="{% url 'localizacao_pet' pet.id %}">Localização</a>
+                            </li>
+                        </ul>
+                    </div>
+                {% endfor %}
             </section>
         </section>
-        <section id="quem_somos">
-            <h1>Quem somos</h1>
-            <h2>O PetMatching é uma plataforma criada para ajudar animais de ONG’s e abrigos a encontrarem um novo lar. Agimos de forma ATIVA e PREVENTIVA:</h2>
-            <section class="quem_somos_conteudo">
-                <img class="imagem" src="img/img3 dog_quemsomos.png" alt="Imagem de um cachorro com pelagem de cor preta e bege, e uma mão humana em seu focinho.">
-                <div class="quem_somos_prevencao">
-                    <h2>PREVENÇÃO</h2>
-                    <p>disponibilizando material de conscientização e programa de adoção responsável.</p>
-                </div>
-                    <img class="imagem" src="img/img2 cat_quemsomos.png" alt="Imagem de um gato de pelagem laranja, recebendo carinho de um humano.">
-                <div class="quem_somos_cao">
-                    <h2>AÇÃO</h2>
-                    <p>conectando animais de abrigos e ONG's com adotantes em potencial.</p>
-                </div>
-            </section>
-        </section>
-
-        <section id="pets">
-            <h1>Nossos pets</h1>
-            <section class="pets_conteudo">
-                <div class="Bob">
-                    <h2>Bob</h2>
-                    <img class="imagem_pets" src="img/img4 bob_queroadotar.png" alt="Imagem de um cachorro filhote de pelagem branca e coleira verde.">
-                    <ul>
-                        <li>Animal: cachorro</li>
-                        <li>Nome: Bob</li>
-                        <li>Idade: 3 meses</li>
-                        <li>Porte: grande</li>
-                        <li>Sexo: macho</li>
-                        <li>Cor: branco</li>
-                        <li>Pelagem: curta</li>
-                        <li>ONG/lar temporário: Matilha da Bá</li>
-                        <li>Telefone: (11)11111-1111</li>
-                        <li>E-mail: matilhadaba@hotmail.com</li>
-                    </ul>
-                    <div class="localizacao_item">
-                        <a href="localizacao.html" class="localizacao_link">Encontre aqui localização deste pet!</a>
-                    </div>
-                </div>
-                <div class="Julia">
-                    <h2>Julia</h2>
-                    <img class="imagem_pets" src="img/img5 julia_queroadotar.png" alt="Imagem de uma gata de pelagem branca, preta e marrom, e olhos verdes.">
-                    <ul>
-                        <li>Animal: gato</li>
-                        <li>Nome: Julia</li>
-                        <li>Idade: 11 meses</li>
-                        <li>Porte: pequeno</li>
-                        <li>Sexo: fêmea</li>
-                        <li>Cor: laranja e preto</li>
-                        <li>Pelagem: curta</li>
-                        <li>ONG/lar temporário: Matilha da Bá</li>
-                        <li>Telefone: (11)11111-1111</li>
-                        <li>E-mail: matilhadaba@hotmail.com</li>
-                    </ul>
-                    <div class="localizacao_item">
-                        <a href="localizacao.html" class="localizacao_link">Encontre aqui localização deste pet!</a>
-                    </div>
-                </div>
-                <div class="Francisca">
-                    <h2>Francisca</h2>
-                    <img class="imagem_pets" src="img/img6 francisca_queroadotar.png" alt="Imagem de uma cadela filhote, de pelagem preta e marrom.">
-                    <ul>
-                        <li>Animal: cachorro</li>
-                        <li>Nome: Francisca</li>
-                        <li>Idade: 2 anos</li>
-                        <li>Porte: médio</li>
-                        <li>Sexo: fêmea</li>
-                        <li>Cor: preto e caramelo</li>
-                        <li>Pelagem: curta</li>
-                        <li>ONG/lar temporário: Matilha da Bá</li>
-                        <li>Telefone: (11)11111-1111</li>
-                        <li>E-mail: matilhadaba@hotmail.com</li>
-                    </ul>
-                    <div class="localizacao_item">
-                        <a href="localizacao.html" class="localizacao_link">Encontre aqui localização deste pet!</a>
-                    </div>
-                </div>
-            </section>
-        </section>
-
         <section id="blog">
             <h1>Nosso blog</h1>
             <section class="blog_conteudo">
-                <img class="imagem" src="img/img7 dog_nossoblog.png" alt="Imagem em preto e branco de um cachorro da raça labrador, recebendo carinho de um humano.">
+                <img src="{% static 'img/img7 dog_nossoblog.png' %}" alt="Imagem em preto e branco de um cachorro da raça labrador, recebendo carinho de um humano">
                 <div class="blog_conteudo_box1">
                     <h2>Maus tratos: como denunciar?</h2>
                     <br>
                     <a href="" class="leia_mais">Leia mais</a>
                 </div>
-                    <img class="imagem" src="img/img8 cat_nossoblog.png" alt="Imagem de um gato branco e laranja, recebendo carinho de um humano.">
+                <img src="{% static 'img/img8 cat_nossoblog.png' %}" alt="Imagem de um gato branco e laranja, recebendo carinho de um humano">
                 <div class="blog_conteudo_box2">
                     <h2>O que é uma adoção responsável?</h2>
                     <br>
@@ -129,28 +109,28 @@
             </section>
         </section>
     </main>
+    <script type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <footer>
-         <div class = "container">
+        <div class="container">
             <!-- primeira coluna-->
             <ul>
                 <h3>PetMatching</h3>
                 <p> Não compre! Adote!</p>
+                <p> 2023 </p>
             </ul>
             
             <!-- segunda coluna-->
             <ul>
                 <h3>Links</h3>
-                <p><a href="cadastro ong.html">Cadastrar ONG</a><p>
-                <p><a href="login.html">Quem somos</a></p>
-
+                <p><a href="{% url 'cadastro_ong' %}">Cadastrar ONG</a><p>
+                <p><a href="#quem_somos">Quem somos</a></p>
             </ul>
             
             <!-- terceira coluna-->
             <ul>
-                <h3><a href=acessibilidade.html>Acessibilidade</a></h3>
-                
+                <h3><a href="acessibilidade">Acessibilidade</a></h3> 
             </ul>
-
             <!-- quarta coluna-->
             <ul>
                 <h3>Contate-nos</h3>
@@ -158,7 +138,7 @@
                 <p> petmatching@gmail.com</p>
                 <p> Brasil</p>
             </ul>            
-            </div>
+        </div>
     </footer>
 </body>
 </html>
